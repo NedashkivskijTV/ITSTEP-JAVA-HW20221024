@@ -1,0 +1,18 @@
+CREATE DATABASE my_db_phone;
+USE my_db_phone;
+
+CREATE TABLE contacts(
+	id int primary key not null auto_increment,
+    first_name varchar(25),
+    last_name varchar(25)
+);
+
+CREATE TABLE phones(
+    id int primary key not null auto_increment,
+    contact_id int,
+    phone_number text,
+	foreign key(contact_id) references contacts(id)
+);
+
+select * from phones;
+select * from contacts;
